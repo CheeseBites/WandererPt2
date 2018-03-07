@@ -2,6 +2,11 @@
   /* CSS that should be displayed if width is equal to or less than 800px goes here */
 }
 
+html, body{
+    background-image: url("../img/prefbg.jpg") !important;
+    background-size: cover;
+}
+
 .textCentered{
     text-align: center;
 }
@@ -33,3 +38,9 @@
     height: 100%;
     z-index: 0;
 }
+
+.card-title{
+    text-decoration: underline;
+    font-weight: bold !important;
+}
+

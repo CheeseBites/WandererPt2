@@ -4,7 +4,8 @@
 html { overflow-y: scroll; }
 
 body { font-family: sans-serif;
-background-color:rgb(247,247,247) !important; }
+background-color:#dfe3ee !important;
+}
 
 /* ---- grid ---- */
 .container{
@@ -12,7 +13,7 @@ background-color:rgb(247,247,247) !important; }
 }
 
 .grid {
-  background-color:rgb(247,247,247) !important; 
+  background:transparent;
 }
 
 /* clear fix */
@@ -43,6 +44,7 @@ background-color:rgb(247,247,247) !important; }
   background-color: white;
   color:black;
   position:relative;
+  background:transparent;
 }
 
 .grid-item img {
