@@ -1,0 +1,135 @@
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif;
+background-color:rgb(247,247,247) !important; }
+
+/* ---- grid ---- */
+.container{
+	margin: 2% auto;
+}
+
+.grid {
+  background-color:rgb(247,247,247) !important; 
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 32%;
+}
+
+.gutter-sizer {
+  width: 1%;
+}
+
+.grid-item--width2 { width: 50%; }
+
+.grid-item {
+  float: left;
+  margin-bottom: 1%;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  color:black;
+  position:relative;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  position: relative;
+}
+nav{
+	text-align: center;
+	padding:0px 0px 5px 5px;
+}
+.nav-list{
+	margin-top:15px;
+}
+a.nav-item{
+	font-family: "Bookman Old Style";
+	
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	margin-right: 3em;
+	margin-left: 3em;
+	color:white;
+}
+
+.navbreaker{
+	width: 45%;
+	margin: auto;
+}
+
+
+hr{
+	background-color:black;
+	height:2px !important;
+}
+
+.navbreaker>p{
+	font-family: "Lucida Typewriter";
+	font-size: 85px;
+	font-style: italic;
+	font-variant: small-caps;
+	font-weight: 700;
+	line-height: 73.5px;
+	text-align: center;
+}
+
+/*------------------------*/
+.myImg {
+    border-radius: 5px;
+    transition: 0.3s;
+	}
+
+.myImg:hover {opacity: 0.7;}
+.grid-item:hover .caption{
+	 transform: translateY(0);
+}
+
+.grid-item:hover .captionLayer{
+	visibility: visible;
+  opacity: 1;
+}
+
+.captionLayer{
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 62, 206, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.caption{
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+#map {
+        height: 40%;
+		width:80%;
+		margin: auto;
+      }

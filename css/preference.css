@@ -1,0 +1,35 @@
+@media (max-width: 800px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+}
+
+.textCentered{
+    text-align: center;
+}
+
+.row{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btn{
+    padding: auto;
+}
+
+.col:hover{
+   opacity: 0.4; 
+}
+
+
+.card{
+    height: 140px;
+    overflow: hidden;
+}
+
+.card:hover{
+    box-shadow: 1px 3px 3px grey;
+}
+
+.card-image{
+    height: 100%;
+    z-index: 0;
+}
