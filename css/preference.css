@@ -1,46 +1,100 @@
 @media (max-width: 800px) {
-  /* CSS that should be displayed if width is equal to or less than 800px goes here */
-}
-
-html, body{
-    background-image: url("../img/prefbg.jpg") !important;
-    background-size: cover;
-}
-
-.textCentered{
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  }
+  
+  html, body{
+      background-image: url("../img/prefbg.jpg") !important;
+      background-size: cover;
+  
+  }
+  #title{
+    font-size:65px;
+    font-weight: 300;
     text-align: center;
+    font-family: "Bookman Old Style";
+  color: pink;
+  display:inline-block;
+  margin:auto;
+  border-style: double;
+  border-radius: 5px;
+  }
+
+  .title{
+    display: flex;
+  }
+
+  .textCentered{
+      text-align: center;
+  }
+
+  .btn{
+    margin-left:2%; 
+    background-color: #008CBA;
+    color: white;
+    font-size:45px;
+    font-weight: 500;
+    border-style: solid;
+    border-color:white;
+  }
+  
+  .row{
+      margin-top: auto;
+      margin-bottom: 10%;
+  }
+  
+  
+  .prefLabel:hover img{
+    cursor:pointer;
+    opacity: 1;
+  }
+  
+  .prefLabel{
+    width:30%;
+    height:30%; 
+    padding:1%;
+  }
+
+  label img{
+    height:100%;
+    width:100%;
+    border-radius: 25px;
+    opacity:.6;
+
+  }
+
+  .container{
+    width:80%;
+    margin:auto;
+  }
+
+  label div{
+    margin:auto; 
+    text-align: center;
+  }
+
+  label div span{
+    font-size: 20px;
+    color:white;
+    font-weight: 600;
+  }
+
+  #submit{
+    display:flex;
+    width: 100%;
+    margin:auto;
+    align-items: center;
+    justify-content: center;
+    margin-top:5%;
+  }
+
+  form{
+    margin:auto;
+    width:100%;
+    text-align: center;
+  }
+
+  input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 4px;
+  line-height: normal;
 }
-
-.row{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.btn{
-    padding: auto;
-}
-
-.col:hover{
-   opacity: 0.4; 
-}
-
-
-.card{
-    height: 140px;
-    overflow: hidden;
-}
-
-.card:hover{
-    box-shadow: 1px 3px 3px grey;
-}
-
-.card-image{
-    height: 100%;
-    z-index: 0;
-}
-
-.card-title{
-    text-decoration: underline;
-    font-weight: bold !important;
-}
-

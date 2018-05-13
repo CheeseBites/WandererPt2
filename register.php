@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="btn btn-success" href="preference.html" role="button">Register</a>
+						<a class="btn btn-success" href="preference.php" role="button">Register</a>
 					</div>
 
 

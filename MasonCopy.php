@@ -1,4 +1,4 @@
-<!DOCTYPE doctype html>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8"> </meta>
@@ -10,7 +10,7 @@
                 <link href="css/MasonTest.css" rel="stylesheet" type="text/css"></link>
                 <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
                 </link>
-                        
+                <link type="text/css" rel="stylesheet" href="css/preference.css"/>
        
         <script>
 
@@ -23,16 +23,66 @@
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
-          zoom: 16
+          zoom: 14
         });
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: pyrmont,
-          radius: 500,//radius of how far from user
-          type: ['store']//archetype
+          radius: 2500,//radius of how far from user
+          type: [<?php
+              if(isset($_POST['submit'])){
+                $images=$_POST['images'];
+                foreach($images as $image){
+                  echo "'" . $image . "', ";
+                }
+              }
+             ?>]//archetype
         }, callback);
+
+            //here
+
+      var ac = new google.maps.places.Autocomplete(
+        (document.getElementById('autocomplete')), {
+          types: ['geocode']
+        });
+    
+      ac.addListener('place_changed', function() {
+    
+        var place = ac.getPlace();
+    
+        if (!place.geometry) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          window.alert("No details available for input: '" + place.name + "'");
+          return;
+        }
+            
+            pyrmont = {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()};//User location
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 14
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 2500,//radius of how far from user
+          type: [<?php
+              if(isset($_POST['submit'])){
+                $images=$_POST['images'];
+                foreach($images as $image){
+                  echo "'" . $image . "', ";
+                }
+              }
+             ?>]//archetype
+        }, callback);
+      });
+
+
       }
 
       function callback(results, status) {
@@ -55,7 +105,25 @@
           infowindow.open(map, this);
         });
       }
+
+      function changeTitle(activity_id){
+        var element = document.getElementById(activity_id).children;
+    if(element[0].style.opacity != 0.4){
+        element[0].style.opacity = 0.4;        
+    }else{
+        element[0].style.opacity = 1;
+    }
+}
+
+function distanceSelector(id){
+    var element = document.getElementById(id);
+    var selectorElement = document.getElementById('mileSelector');
+
+    selectorElement.innerHTML = element.innerHTML;
+}
     </script>
+
+
     </head>
     <body>
     	<div class="nav">
@@ -68,15 +136,23 @@
                         <a class="nav-item nav-link" href="#">
                             Profile
                         </a>
-                        <a class="nav-item nav-link" href="preference.html">
+                        <a class="nav-item nav-link" href="preference.php">
                             Preferences
                         </a>
                     	</div>
             </nav>
         </div>
+
+
 		
+
 <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmGBq3tFGiQVeTVKYk9nPLlTBkVc_puSw&libraries=places&callback=initMap" async defer></script>
+        
+            
+            <div id="locationField">
+  <input id="autocomplete" placeholder="Enter your address"
+          type="text"></input>
+</div>
 
         <div class="container"> 
             
@@ -153,6 +229,7 @@
 
 
         </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwsb5jZ-aewfHgbsYcuTCitr9CHPEDoa0&libraries=places&callback=initMap" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
         </script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js">
@@ -160,7 +237,7 @@
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js">
         </script>
 
-        <script src="js/MasonTest.js">
+        <script src="js/MasonTest.js" async defer>
         </script>
     </body>
 </html>

@@ -1,6 +1,5 @@
-// external js: masonry.pkgd.js, imagesloaded.pkgd.js
+ 
 
-// init Masonry
 var $grid = $('.grid').masonry({
   itemSelector: '.grid-item',
   gutter: '.gutter-sizer',
